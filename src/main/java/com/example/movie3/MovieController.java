@@ -37,9 +37,10 @@ public class MovieController {
 
              List<Movie> movies = getMovies(url)
                 .stream()
-                .filter(movie -> movie.getPopularity() >= 30 && movie.getPopularity() <= 80)
-                .filter(movie -> movie.getTitle().length() >= 10)
-                .collect(Collectors.toList());
+                     .filter(movie -> movie.getTitle().length() >= 10)
+                     .filter(movie -> movie.getPopularity() >= 30 && movie.getPopularity() <= 80)
+                     .collect(Collectors.toList());
+             
              model.addAttribute( "movies", movies);
 
             return "medium-popular-long-name";
