@@ -32,8 +32,8 @@ public class MovieController {
         return "now-playing";
     }
 
-    @RequestMapping("/medium-popular-long-name")
-    public String mediumPopular(Model model){
+         @RequestMapping("/medium-popular-long-name")
+         public String mediumPopular(Model model){
 
              List<Movie> movies = getMovies(url)
                 .stream()
@@ -42,11 +42,10 @@ public class MovieController {
                 .collect(Collectors.toList());
              model.addAttribute( "movies", movies);
 
-
             return "medium-popular-long-name";
     }
 
-    public static List<Movie> getMovies(String route) {
+        public static List<Movie> getMovies(String route) {
 
         RestTemplate restTemplate = new RestTemplate();
         ResultsPage results = restTemplate.getForObject(route, ResultsPage.class);
