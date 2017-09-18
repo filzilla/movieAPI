@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<header>
+
+    <a href="/">Home</a>
+    <a href="/medium-popular-long-name">Medium Popular Names</a>
+
+
+</header>
+<h1>You are on the Now Playing page</h1>
+
+<p>These movies are playing in nearby theaters:</p>
+
+
+<div th:each="movie : ${movies}">
+    <hr/>
+    <img width="150px" th:src="@{'http://image.tmdb.org/t/p/original' + ${movie.posterPath}}"/>
+    <br/>
+    <span th:text="${movie.title}"></span>
+
+
+</div>
+
+
+</body>
+</html>
